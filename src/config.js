@@ -4,7 +4,7 @@ export const profile = {
   name: 'Kartheek Potnuru',
   initials: 'KP',
   role: 'Software Developer | Python Full Stack & AI/ML',
-  location: 'Rajam, Andhra Pradesh, India',
+  location: 'Srikakulam, Andhra Pradesh, India',
   email: 'kartheekpotnuru9@gmail.com',
   phone: '+91 6304441348',
   github: 'https://github.com/kartheekpotnuru9',

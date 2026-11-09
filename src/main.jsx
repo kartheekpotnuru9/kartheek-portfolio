@@ -148,7 +148,7 @@ function App() {
       </section>
 
       <section id="projects" className="section container">
-        <SectionHeading eyebrow="03 / SELECTED WORK" title="Projects with a purpose." text="A selection of academic and personal work. Open the configuration file to add repository and demo URLs."/>
+        <SectionHeading eyebrow="03 / SELECTED WORK" title="Projects with a purpose." text="Explore my academic and personal projects, where I turn ideas into practical technology solutions."/>
         <div className="projects-grid">
           {profile.projects.map((project, i) => <motion.article key={project.number} className="project-card glass-card" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{once:true}}>
             <div className={`project-visual visual-${i+1}`}>
