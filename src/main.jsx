@@ -34,7 +34,7 @@ function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const nav = ['About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact']
+  const nav = ['About', 'Skills', 'Projects', 'Achievements', 'Experience', 'Education', 'Contact']
   const closeMenu = () => setMenuOpen(false)
   const validEmail = profile.email && !profile.email.includes('YOUR_')
   const validLinkedin = profile.linkedin && !profile.linkedin.includes('YOUR_')
@@ -169,8 +169,19 @@ function App() {
         </div>
       </section>
 
+      <section id="achievements" className="section container">
+        <SectionHeading eyebrow="04 / ACHIEVEMENTS" title="Milestones that matter." text="A few milestones from competitive programming, AI projects, and hands-on industry experience."/>
+        <motion.div className="achievement-panel glass-card" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{once:true}}>
+          <div className="achievement-list">
+            {profile.achievements.map((achievement, i) => <div className="achievement-item" key={achievement}>
+              <span>0{i + 1}</span><p>{achievement}</p>
+            </div>)}
+          </div>
+        </motion.div>
+      </section>
+
       <section id="experience" className="section container">
-        <SectionHeading eyebrow="04 / EXPERIENCE" title="Learning beyond the classroom." text="Training and experience that helped me connect concepts with practical technology."/>
+        <SectionHeading eyebrow="05 / EXPERIENCE" title="Learning beyond the classroom." text="Training and experience that helped me connect concepts with practical technology."/>
         <div className="timeline">
           {profile.experience.map((item, i) => <motion.div key={item.role} className="timeline-item" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{once:true}}>
             <div className="timeline-marker"><BriefcaseBusiness size={17}/></div><div className="timeline-card glass-card">
@@ -183,7 +194,7 @@ function App() {
       </section>
 
       <section id="education" className="section container">
-        <SectionHeading eyebrow="05 / EDUCATION" title="The foundation." text="My academic journey and the foundation behind my interest in technology."/>
+        <SectionHeading eyebrow="06 / EDUCATION" title="The foundation." text="My academic journey and the foundation behind my interest in technology."/>
         <motion.div className="education-card glass-card" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{once:true}}>
           <div className="education-icon"><GraduationCap size={27}/></div>
           <div className="education-details"><span className="eyebrow">2022 — {profile.education.graduation}</span><h3>{profile.education.degree}</h3><p>{profile.education.college}</p></div>
@@ -194,7 +205,7 @@ function App() {
       <section id="contact" className="section container contact-section">
         <div className="contact-panel">
           <div className="contact-orb"/>
-          <div className="contact-copy"><span className="eyebrow">06 / WHAT'S NEXT?</span><h2>Have an idea?<br/><em>Let's build it.</em></h2><p>I'm open to entry-level software development opportunities, collaboration, and conversations about technology.</p>
+          <div className="contact-copy"><span className="eyebrow">07 / WHAT'S NEXT?</span><h2>Have an idea?<br/><em>Let's build it.</em></h2><p>I'm open to entry-level software development opportunities, collaboration, and conversations about technology.</p>
             <div className="contact-actions">
               {validEmail ? <a className="button button-primary" href={`mailto:${profile.email}`}>Say hello <Mail size={16}/></a> : <span className="button button-primary disabled-button">Add your email in config.js <Mail size={16}/></span>}
               <a className="button button-ghost" href={profile.github} target="_blank" rel="noreferrer">GitHub <Github size={16}/></a>
